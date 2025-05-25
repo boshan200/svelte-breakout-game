@@ -8,9 +8,9 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: undefined,
+			fallback: 'index.html',
 			precompress: false,
-			strict: true
+			strict: false
 		}),
 		alias: {
 			$components: 'src/components',
@@ -19,6 +19,9 @@ const config = {
 		},
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? '/svelte-breakout-game' : ''
+		},
+		prerender: {
+			entries: ['/']
 		}
 	}
 };
